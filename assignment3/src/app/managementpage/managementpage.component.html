@@ -1,0 +1,26 @@
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+
+    <div fxFlex>
+        <div>
+            <h3>Our Suppliers</h3>
+            <hr>
+        </div>
+        
+    </div>
+    <div fxFlex *ngIf="suppliers">
+        <mat-grid-list cols='4' rowHeight="200px">
+          <mat-grid-tile *ngFor="let dish of suppliers" [routerLink]="['/productdetail', dish.id]">
+            <img height="200px" src='{{dish.image}}' alt={{dish.name}} style="width: 100%;margin-left: 5px;">
+            <mat-grid-tile-footer style="margin-left: 5px;">
+              <h1>{{dish.name | uppercase}}</h1>
+            </mat-grid-tile-footer>
+          </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+
+    
+
+  
+    
+</div>
+

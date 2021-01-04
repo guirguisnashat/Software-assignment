@@ -1,0 +1,57 @@
+<div *ngIf='supplier'>
+    <img src="{{supplier.image}}" alt="image" height="400px" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;">
+</div>
+<div style="margin-left: 25px; margin-top: 25px;"  >
+    <div style="width: 40%; float: left;" fxLayout="column">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    <h1>Name : {{supplier.name}}</h1>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <h3>Email : {{supplier.email}}</h3>
+                <h3>Address : {{supplier.address}}</h3>
+                <h3>Nation : {{supplier.nation}}</h3>
+
+                <h3>Phone : {{supplier.phone}}</h3>
+                <h3>Website : {{supplier.websitedomain}}</h3>
+                <p>{{supplier.description}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div style="width: 100%;">
+        <h2>Our Products</h2>
+    </div>
+    
+    <div style="width: 55%; float: right; margin: 5px;" *ngFor="let dish of supplier.products" fxLayout="column" >
+        
+        <mat-grid-list cols='1'  rowHeight="200px">
+            <mat-grid-tile  style="width: 100%; float: left;">
+              <img height="200px" src='{{dish.image}}' alt={{dish.name}} style="width: 100%;margin-left: 20px;">
+              <mat-grid-tile-footer style="margin-left: 25px;">
+                <h1>{{dish.name | uppercase}}</h1>
+              </mat-grid-tile-footer>
+              
+            </mat-grid-tile>
+          </mat-grid-list>
+          <div style="width: 100%; float: left;">
+              <mat-slider style="width: 100%; float: left;"
+                 thumbLabel
+                 tickInterval="5"
+                 min="1"
+                 max="200">
+              </mat-slider>
+            <button mat-button class="text-floral-white"  style="background-color: blueviolet;">order</button>
+            <br>
+            <br>
+          </div>  
+         
+
+
+
+    </div>
+</div>
