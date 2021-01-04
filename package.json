@@ -1,0 +1,16 @@
+{
+  "name": "coding-software",
+  "version": "1.0.0",
+  "description": "Software assignment",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
+  },
+  "author": "guirguis",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
